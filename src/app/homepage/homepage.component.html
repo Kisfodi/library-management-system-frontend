@@ -1,0 +1,12 @@
+<h2>
+  A glimpse into the catalog
+</h2>
+  <div class="book-menu">
+    @for(book of books; track book.title) {
+      <a [routerLink]="[book.id]">
+        {{book.title}} - {{book.author.name}}
+      </a>
+      <p>{{book.title}}</p>
+    }
+  </div>
+

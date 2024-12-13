@@ -1,0 +1,19 @@
+
+<div style="display: flex">
+  <div style="width: 50%">
+    @for (book of books; track book.title; let i = $index) {
+      <h4>
+        {{book.title}}
+      </h4>
+<!--      <div #teamDiv class="books">-->
+<!--          <button type="button" appBookButton-->
+<!--                routerLink="/{{book.id}}-->
+<!--">-->
+<!--          <span class="badge">{{i+1}}.</span>-->
+<!--          <span class="name">{{book.title}}</span>-->
+<!--        </button>-->
+<!--      </div>-->
+    }
+  </div>
+</div>
+

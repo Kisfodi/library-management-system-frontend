@@ -9,6 +9,6 @@ export class Author {
     public placeOfBirth: String,
     public placeOfDeath: String|undefined,
     public books: Book[],
-    // public portraitPath: String
+    public portraitPath: string|undefined
   ) {}
 }

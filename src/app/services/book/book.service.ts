@@ -82,7 +82,7 @@ export class BookService {
 
     }
 
-    finalUrl = finalUrl.substring(0, finalUrl.length-1);
+    finalUrl = finalUrl.substring(0, finalUrl.length);
 
     return this.http.get<Book[]>(finalUrl)
 

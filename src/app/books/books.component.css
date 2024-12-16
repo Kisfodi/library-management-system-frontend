@@ -1,0 +1,115 @@
+/* DashboardComponent's private CSS styles */
+
+/*h2 {
+  text-align: center;
+}
+
+.books {
+  display: block;
+  float: left;
+}
+
+a {
+  background-color: #3f525c;
+  border-radius: 2px;
+  padding: 1rem;
+  margin: 5px auto;
+  font-size: 1.2rem;
+  text-decoration: none;
+  display: block;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  min-width: 100px;
+  box-sizing: border-box;
+}
+
+a:hover {
+  background-color: #000;
+}
+.book .cover {
+  display: inline-block;
+  width: 100px;
+  height: 150px;
+}
+ */
+.books {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+
+.books div {
+  display: flex;
+}
+
+.books button {
+  flex: 1;
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: 2px;
+  border-radius: 4px;
+  display: flex;
+  align-items: stretch;
+  /*width: 400px;*/
+}
+
+.books button:hover {
+  color: #2c3a41;
+  background-color: #e6e6e6;
+  left: .1em;
+}
+
+.books button:active {
+  background-color: #525252;
+  color: #fafafa;
+}
+
+.books button.selected {
+  background-color: black;
+  color: white;
+}
+
+.books button.selected:hover {
+  background-color: #505050;
+  color: white;
+}
+
+.books button.selected:active {
+  background-color: black;
+  color: white;
+}
+
+.books .badge {
+  align-content: center;
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0 0 0 0;
+  /*padding: 0.8em 0.2em 0 0.2em;*/
+  background-color: #405061;
+  line-height: 1em;
+  margin-right: .2em;
+  width: 50px;
+  border-radius: 2px 0 0 2px;
+}
+
+.books .basic-details {
+  align-self: center;
+  width: 400px;
+}
+
+.books .dates {
+  align-self: center;
+  width: 400px;
+}
+
+.books .cover {
+  display: inline-block;
+  width: 100px;
+  height: 150px;
+}

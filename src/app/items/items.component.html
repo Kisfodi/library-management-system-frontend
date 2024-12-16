@@ -1,1 +1,26 @@
-<p>items works!</p>
+<h1 style="text-align: center">
+  Items
+</h1>
+<table>
+  <tr>
+  <th>Id</th>
+  <th>Title</th>
+  <th>Availability</th>
+  <th>Condition</th>
+  </tr>
+  @for (item of items; track item.id) {
+    <tr>
+      <td>{{item.id}}</td>
+      <td class="book-title" routerLink="/book-details/{{item.book?.id}}">{{item.book?.title}}</td>
+      <td>{{item.isAvailable}}</td>
+      <td>{{item.condition}}</td>
+    </tr>
+  }
+</table>
+<!--<p>items works!</p>-->
+
+<!--@for (item of items; track item.id) {-->
+<!--  <p>-->
+<!--    {{item.id}}: {{item.book.id}}-->
+<!--  </p>-->
+<!--}-->

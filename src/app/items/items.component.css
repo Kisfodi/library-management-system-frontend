@@ -1,0 +1,27 @@
+table {
+  font-family: Arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #aaaaaa;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  color: #ffffff;
+  background-color: #718a6d;
+}
+
+/*tr:nth-child(even) {
+  background-color: #2c3a41;
+  color: #EEEEEE;
+}*/
+
+.book-title {
+  text-decoration: underline;
+  color: #4285a9;
+  cursor: pointer;
+}

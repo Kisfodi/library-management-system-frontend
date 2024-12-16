@@ -8,12 +8,12 @@ export class Book {
     public id:number,
     public title:string,
     public author: Author,
-    public genre: Genre|string,
-    public numberOfPages: number,
+    public genre: Genre,
     public items: Item[],
+    public numberOfPages: number,
     public publicationYear: number,
     public firstPublicationYear: number,
-    // public coverPath: String
+    public coverPath: string|undefined
 
 
   ) {}

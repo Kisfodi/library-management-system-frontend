@@ -6,10 +6,10 @@ export class Rent {
 
   constructor(
     public id: number|undefined,
-    public user: User,
-    public item: Item,
+    public userOfRent: User|undefined,
+    public itemRented: Item|undefined,
     public rentDate: RentDate,
-    public numOfExtensions: number
+    public numberOfExtensions: number
   ) {
   }
 

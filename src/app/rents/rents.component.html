@@ -1,0 +1,67 @@
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Item Id</th>
+    <th>Title</th>
+    <th>Username</th>
+    <th>Start Date</th>
+    <th>Return Date</th>
+    <th>Deadline</th>
+    <th>Number of extensions</th>
+    <th>Condition</th>
+    <th></th>
+  </tr>
+
+  @for (rent of rents; track rent.id)
+  {
+    <tr>
+      <td>{{rent.id}}</td>
+      <td>{{rent.itemRented?.id}}</td>
+      <td>{{ rent.itemRented?.book?.title}}</td>
+      <td>{{rent.userOfRent?.username}}</td>
+      <td>{{rent.rentDate.startDate}}</td>
+      @if (rent.rentDate.returnDate) {
+        <td>{{rent.rentDate.returnDate}}</td>
+      } @else {
+        <td>-</td>
+      }
+      <td>{{rent.rentDate.deadline}}</td>
+      <td>{{rent.numberOfExtensions}}</td>
+      <td>{{rent.itemRented?.condition}}</td>
+      <td>
+        <button type="button" class="delete" title="Return rent" (click)="returnRent(rent)">
+          Return
+        </button>
+        <button type="button" class="delete" title="Extend deadline rent" (click)="extendDeadline(rent)">
+          Extend Deadline
+        </button>
+        <button type="button" class="delete" title="Delete rent" (click)="deleteRent(rent)">
+          <i class="fa fa-trash"></i>
+        </button>
+      </td>
+    </tr>
+  }
+</table>
+<div class="container">
+  <button type="button" class="btn btn-primary" (click)="addNewRent()">
+    Add new rent
+  </button>
+  @if (rent) {
+    <form [formGroup]="rentForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="user-name">Username</label>
+        <input class="form-control" id="user-name" type="text" formControlName="userName" required>
+      </div>
+      <div class="form-group">
+        <label for="itemId">Item Id</label>
+        <input class="form-control" id="itemId" type="text" formControlName="itemId" required>
+      </div>
+      @if (rentForm.errors?.["resultInvalid"] && (rentForm.dirty)) {}
+      <button type="submit" class="btn btn success"
+      [disabled]="!rentForm.valid">
+        Submit
+      </button>
+    </form>
+  }
+</div>
+

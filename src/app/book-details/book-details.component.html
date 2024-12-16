@@ -1,0 +1,11 @@
+@if (book) {
+  <img [src]="book.coverPath">
+  <h3>{{book.title}}</h3>
+  <h4 class="author-name" routerLink="/author-details/{{book.author.id}}">{{book.author.name}}</h4>
+  <h5 class="publication">Published: {{book.publicationYear}}</h5>
+  <h5 class="pages">Pages: {{book.numberOfPages}}</h5>
+}
+
+<button type="button" (click)="goBack()">
+  Back
+</button>

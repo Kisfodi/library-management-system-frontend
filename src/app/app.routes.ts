@@ -1,38 +1,55 @@
 import { Routes } from '@angular/router';
-import {LoginComponent} from "./auth/login/login.component";
-import {authGuard} from "./auth/auth.guard";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
-import {BooksComponent} from "./books/books.component";
+import {RentsComponent} from "./rents/rents.component";
+import {ItemsComponent} from "./items/items.component";
+import {BookDetailsComponent} from "./book-details/book-details.component";
 
 export const routes: Routes = [
-  {
-    path: "login",
-    component: LoginComponent
-  },
+
   {
     path: '',
     redirectTo: '/homepage',
     pathMatch: "full"
   },
   {
-    path: 'books',
-    component: BooksComponent
+    path: 'authors',
+    // component: AuthorsComponent,
+    loadChildren: () =>
+      import("./authors/authors.module")
+        .then(m => m.AuthorsModule)
   },
   {
-    path: "items",
-    canActivate: [authGuard],
-    loadChildren:  () =>
-      import('./items/items.component').then(
-        m => m.ItemsComponent
-      )
+    path: 'books',
+    loadChildren: () =>
+      import("./books/books.module")
+        .then(m => m.BooksModule)
   },
   {
     path: "homepage",
-    canActivate: [authGuard],
     loadComponent: () =>
       import("./homepage/homepage.component").then(
         m => m.HomepageComponent
       )
+  },
+  {
+    path: "book-details",
+    loadChildren: () =>
+      import("./book-details/book-details.module")
+        .then(m => m.BookDetailsModule)
+  },
+  {
+    path: "author-details",
+    loadChildren: () =>
+      import("./author-details/author-details.module")
+        .then(m => m.AuthorDetailsModule)
+  },
+  {
+    path: "items",
+    component: ItemsComponent
+  },
+  {
+    path: "rents",
+    component: RentsComponent
   },
   {
     path: '**', component: PageNotFoundComponent

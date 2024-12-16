@@ -4,6 +4,10 @@ h2 {
   text-align: center;
 }
 
+.book-menu {
+  display: block;
+  float: left;
+}
 
 a {
   background-color: #3f525c;
@@ -15,11 +19,21 @@ a {
   display: block;
   color: #fff;
   text-align: center;
-  width: 50%;
-  min-width: 70px;
+  width: 100%;
+  min-width: 100px;
   box-sizing: border-box;
 }
 
 a:hover {
   background-color: #000;
+}
+
+.book-menu .book-menu-point {
+
+}
+
+.book-menu .cover {
+  display: inline-block;
+  width: 100px;
+  height: 150px;
 }

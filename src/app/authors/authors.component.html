@@ -1,1 +1,14 @@
-<p>authors works!</p>
+@for (author of authors; track author.name; let i=$index) {
+  <div class="authors">
+    <button type="button" appAuthorButton
+            routerLink="author-details/{{author.id}}">
+      <span class="badge">{{i+1}}.</span>
+      <span class="name">{{author.name}}</span>
+      @if (author.portraitPath) {
+        <img class="portrait" [src]="author.portraitPath">
+      } @else {
+        Missing
+      }
+    </button>
+  </div>
+}

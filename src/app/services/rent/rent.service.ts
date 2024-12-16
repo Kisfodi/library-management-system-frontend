@@ -13,8 +13,9 @@ export class RentService {
 
   private rentsUrl = 'api/rents';
 
-  getRents(): Observable<Rent[]> {
-    return this.http.get<Rent[]>(this.rentsUrl);
+  getRents() {
+    return this.http.get<Rent[]>(this.rentsUrl)
+      .pipe(retry(3), catchError(this.handleError));
   }
 
   getRentById(id: number): Observable<Rent> {
@@ -57,31 +58,34 @@ export class RentService {
 
   }
 
-  submitRent(rent: Rent, itemId: number|undefined) {
+  submitRent(rent: Rent) {
+    console.log("Service")
+    console.log(rent.numberOfExtensions)
     return this.http.post<Rent>(this.rentsUrl
-      + "/" + rent.user.username
-      + "/" + itemId,
+      + "/" + rent.userOfRent?.username
+      + "/" + rent.itemRented?.id,
       rent)
       .pipe(catchError(this.handleError));
   }
 
-  deleteRent(rent: Rent, itemId: number|undefined) {
+  deleteRent(rent: Rent) {
     return this.http.delete(this.rentsUrl
-    + "/" + rent.user.username
-    + "/" + itemId).pipe(catchError(this.handleError));
+    + "/" + rent.userOfRent?.username
+    + "/" + rent.itemRented?.id).pipe(catchError(this.handleError));
   }
 
-  returnItem(rent: Rent, itemId: number|undefined) {
-    this.http.put<Rent>(
+  returnItem(rent: Rent) {
+
+   return this.http.put<Rent>(
       this.rentsUrl
-    + "/" + rent.user.username
-    + "/" + itemId, null).pipe(catchError(this.handleError));
+    + "/" + rent.userOfRent?.username
+    + "/" + rent.itemRented?.id, rent).pipe(catchError(this.handleError));
   }
 
-  extendDeadline(rent: Rent, itemId: number|undefined) {
-    this.http.put<Rent>(
+  extendDeadline(rent: Rent): Observable<Rent> {
+    return this.http.put<Rent>(
       this.rentsUrl + "/extend/"
-      + rent.user.username + "/" + itemId, null)
+      + rent.userOfRent?.username + "/" + rent.itemRented?.id, rent)
       .pipe(catchError(this.handleError));
   }
 

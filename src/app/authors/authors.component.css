@@ -1,0 +1,81 @@
+/* authorsComponent's private CSS styles */
+.authors {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+
+.authors div {
+  display: flex;
+}
+
+.authors button {
+  flex: 1;
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: 2px;
+  border-radius: 4px;
+  display: flex;
+  align-items: stretch;
+  /*width: 400px;*/
+}
+
+.authors button:hover {
+  color: #2c3a41;
+  background-color: #e6e6e6;
+  left: .1em;
+}
+
+.authors button:active {
+  background-color: #525252;
+  color: #fafafa;
+}
+
+.authors button.selected {
+  background-color: black;
+  color: white;
+}
+
+.authors button.selected:hover {
+  background-color: #505050;
+  color: white;
+}
+
+.authors button.selected:active {
+  background-color: black;
+  color: white;
+}
+
+.authors .badge {
+  align-content: center;
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0 0 0 0;
+  /*padding: 0.8em 0.2em 0 0.2em;*/
+  background-color: #405061;
+  line-height: 1em;
+  margin-right: .2em;
+  width: 50px;
+  border-radius: 2px 0 0 2px;
+}
+
+.authors .name {
+  align-self: center;
+  width: 220px;
+}
+
+.authors .dates {
+  align-self: center;
+  width: 400px;
+}
+
+.authors .portrait {
+  display: inline-block;
+  width: 100px;
+  height: 150px;
+}

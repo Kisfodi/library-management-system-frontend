@@ -62,7 +62,8 @@
               "buildTarget": "library-management-system-frontend:build:production"
             },
             "development": {
-              "buildTarget": "library-management-system-frontend:build:development"
+              "buildTarget": "library-management-system-frontend:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

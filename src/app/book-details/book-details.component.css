@@ -1,0 +1,14 @@
+.book {
+  display: inline-block;
+  width: 200px;
+  height: 300px;
+}
+
+.author-name {
+  cursor: pointer;
+}
+
+.pages {
+  color: #08590a;
+  opacity: 50%;
+}

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Item} from "../../models/item.model";
-import is = jasmine.is;
 
 @Injectable({
   providedIn: 'root'

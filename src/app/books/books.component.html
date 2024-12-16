@@ -1,19 +1,13 @@
-
-<div style="display: flex">
-  <div style="width: 50%">
-    @for (book of books; track book.title; let i = $index) {
-      <h4>
-        {{book.title}}
-      </h4>
-<!--      <div #teamDiv class="books">-->
-<!--          <button type="button" appBookButton-->
-<!--                routerLink="/{{book.id}}-->
-<!--">-->
-<!--          <span class="badge">{{i+1}}.</span>-->
-<!--          <span class="name">{{book.title}}</span>-->
-<!--        </button>-->
-<!--      </div>-->
-    }
-  </div>
+<div class="books">
+  @for(book of books; track book.id) {
+    <button type="button" routerLink="/book-details/{{book.id}}">
+      <span class="badge">{{book.id}}.</span>
+      <span class="basic-details">{{book.title}} - {{book.author.name}}</span>
+      <img class="cover" [src]="book.coverPath">
+    </button>
+<!--      <a class="book" routerLink="/book-details/{{book.id}}">-->
+<!--        <img class="cover" [src]="book.coverPath">-->
+<!--        {{book.title}} - {{book.author.name}}-->
+<!--      </a>-->
+  }
 </div>
-

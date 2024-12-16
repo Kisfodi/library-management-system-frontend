@@ -1,0 +1,15 @@
+@if(author) {
+  <img class="portrait" [src]="author.portraitPath">
+  <h3>{{author.name}}</h3>
+  <h5 class="born">Born: {{author.dateOfBirth}} ({{author.placeOfBirth}})</h5>
+  @if (author.dateOfDeath) {
+    <h5 class="died">Died: {{author.dateOfDeath}} ({{author.placeOfDeath}})</h5>
+  } @else {
+    <h5>Died: -</h5>
+  }
+
+}
+
+<button type="button" (click)="goBack()">
+  Back
+</button>

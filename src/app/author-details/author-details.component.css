@@ -1,0 +1,14 @@
+.portrait {
+  display: inline-block;
+  width: 200px;
+  height: 300px;
+}
+
+.born {
+  color: #08590a;
+}
+
+.died {
+  color: #cf3434;
+  opacity: 0.5;
+}
